@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurva Frontend Assignment</title>
+    <!-- Include Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <div class="container mx-auto p-4">
+        <header class=" mb-8">
+
+        </header>
+
+        <h1 class="text-2xl font-bold ">Filter by</h1>
+        <div class="flex flex-wrap gap-12">
+            <div id="select-colors">
+                <b>color:</b>
+                <div id="colorContainer" class="flex gap-4 flex-wrap w-28">
+                </div>
+                <button id="resetColor">reset</button>
+            </div>
+            <form id="search-bar">
+                <p>title / subtitle</p>
+                <input type="text" id="searchInput" class="border outline outline-gray-400 px-2" />
+            </form>
+        </div>
+
+        <div id="dataDisplay" class="flex flex wrap w-1/3 mt-12 items-center">
+            
+        </div>
+
+        <main class="">
+            <button
+                id="openSidebarButton"
+                class="border border-black py-1 px-2 mt-12 onclick=disableButton()" onclick="disableButton()"
+            >
+                + Add creative
+            </button>
+            
+        </main>
+        <div id="cardContainer" class="mt-16"></div>
+    </div>
+
+    <!-- Sidebar Drawer -->
+    <div id="sidebar" class="p-4 flex flex-col justify-between transform translate-x-full border border-black fixed top-0 right-0 h-full w-72 bg-white transition-transform duration-300">
+        <div class="">
+            <h2 class="text-lg font-semibold flex justify-between">
+                Creative creation 
+                <button id="closeSidebarButton" class="hover:cursor-pointer" onclick="enableButton()">X</button>
+            </h2>
+
+            <form id="userForm" class="mt-16">
+                <p for="name">Title:</p>
+                <input type="text" id="title" name="title" class="border border-black outline outline-gray-400 px-2" required>
+                <br>
+                <p for="email" class="mt-8">Subtitle:</p>
+                <input type="text" id="subtitle" name="subtitle" class="border border-black outline outline-gray-400 px-2" required>
+                <br>
+                <p class="mt-12">Background color</p>
+                <div id="colorContainerSidebar" class="flex gap-4 mt-2 flex-wrap w-28">
+                </div>
+            </form>
+        </div>
+        <button
+            id="submitBtn"
+            class="border border-black py-1 px-2 w-1/3 mb-12"
+            onclick="enableButton()"
+        >
+            Done
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
